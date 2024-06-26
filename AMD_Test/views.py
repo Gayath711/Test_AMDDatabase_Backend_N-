@@ -102,6 +102,8 @@ def dataFromMSSQL(request):
                 'AdmittingDiagnosisTypeCode': invist.admittingdiagnosistypecode,
                 'PatientStatusCode': invist.patientstatuscode,
                 'AdmissionDate': invist.admissiondate
+
             })
+            print(data)
 
     return JsonResponse(data, safe=False)

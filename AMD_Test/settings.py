@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-z=ftn48@8tt(&)zx533p1ohwhu=+dopg-weu8f6052%k8uoru3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['35.91.207.88']
 
 
 # Application definition
@@ -39,7 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'AMD_Test'
+]
+
+CORS_ALLOWED_ORIGINS = [
+    'http://35.91.207.88:3000',  # Adjust with your React app's URL
 ]
 
 MIDDLEWARE = [
