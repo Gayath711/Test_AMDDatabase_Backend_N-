@@ -11,12 +11,17 @@ DEBUG = True
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
-    'https://amd-frontend.dataterrain-demo.net/',
+    'https://amd-frontend.dataterrain-demo.net',
+    'https://amd-backend.dataterrain-demo.net'
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_ALL_HEADERS=True
+CORS_ALLOW_CREDENTIALS = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    'https://amd-backend.dataterrain-demo.net/'
+    'amd-backend.dataterrain-demo.net'
 ]
 
 
@@ -25,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'corsheaders',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'AMD_Test'
@@ -35,6 +41,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -69,7 +76,7 @@ DATABASES = {
         'USER': 'SA',
         'PASSWORD': 'Data@123',
         'HOST': '34.209.227.174',
-        'PORT': '',
+        'PORT': '1433',
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server'
         }
